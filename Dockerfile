@@ -36,7 +36,7 @@ ENV NGINX_CUSTOM_BIN_PATH=/usr/sbin/nginx
 # 7. Update ownership of /opt/mendix so that the app can run as a non-root user
 # 8. Update permissions of /opt/mendix so that the app can run as a non-root user
 RUN mkdir -p /tmp/buildcache /tmp/cf-deps /var/mendix/build /var/mendix/build/.local &&\
-    chmod +rx /opt/mendix/buildpack/compilation.py /opt/mendix/buildpack/git /opt/mendix/buildpack/buildpack/stage.py &&\
+    chmod +rx /opt/mendix/buildpack/compilation.py /tmp/opt /opt/mendix/buildpack/git /opt/mendix/buildpack/buildpack/stage.py &&\
     cd /opt/mendix/buildpack &&\
     ./compilation.py /opt/mendix/build /tmp/buildcache /tmp/cf-deps 0 &&\
     rm -fr /tmp/buildcache /tmp/javasdk /tmp/opt /tmp/downloads /opt/mendix/buildpack/compilation.py /opt/mendix/buildpack/git &&\
